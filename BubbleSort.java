@@ -1,6 +1,8 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.*;  
+import java.io.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class BubbleSort {
@@ -8,7 +10,7 @@ public class BubbleSort {
     public static int[] generateArr(int size) {
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
-            arr[i] = ThreadLocalRandom.current().nextInt(0, 100 + 1);
+            arr[i] = ThreadLocalRandom.current().nextFloat(0, 100 + 1);
         }
         return arr;
     }
@@ -34,9 +36,9 @@ public class BubbleSort {
             for (int size : sizes) {
                 int[] randomArr = generateArr(size);
 
-                long startTime = System.nanoTime();
+                float startTime = System.nanoTime();
                 bubbleSort(randomArr);
-                long endTime = System.nanoTime();
+                float endTime = System.nanoTime();
 
                 long duration = (endTime - startTime);
 
